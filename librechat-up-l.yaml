@@ -28,11 +28,6 @@ mcpServers:
 
 endpoints:
   custom:
-    # 302AI
-    # https://302.ai/
-    # Script to fetch models: https://github.com/LibreChat-AI/librechat-config-yaml/blob/main/scripts/ai302.py
-endpoints:
-  custom:
 
     # =========================
     # Anthropic (Claude)
