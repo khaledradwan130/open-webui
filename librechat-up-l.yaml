@@ -1,0 +1,187 @@
+version: 1.2.4
+
+cache: true
+
+interface:
+  privacyPolicy:
+    externalUrl: 'https://librechat.ai/privacy-policy'
+    openNewTab: true
+  termsOfService:
+    externalUrl: 'https://librechat.ai/tos'
+    openNewTab: true
+
+registration:
+  socialLogins:
+    - "discord"
+    - "facebook"
+    - "github"
+    - "google"
+    - "openid"
+
+mcpServers:
+  Time:
+    type: stdio
+    command: uvx
+    args:
+      - mcp-server-time
+    startup: false
+
+endpoints:
+  custom:
+    # 302AI
+    # https://302.ai/
+    # Script to fetch models: https://github.com/LibreChat-AI/librechat-config-yaml/blob/main/scripts/ai302.py
+endpoints:
+  custom:
+
+    # =========================
+    # Anthropic (Claude)
+    # =========================
+    - name: "Anthropic"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - anthropic/claude-haiku-4.5
+          - anthropic/claude-sonnet-4-5-20250929
+          - anthropic/claude-opus-4-5-20251101
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "Anthropic"
+
+    # =========================
+    # OpenAI
+    # =========================
+    - name: "OpenAI"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - openai/gpt-4o-mini
+          - openai/gpt-4.1-mini
+          - openai/gpt-5-mini
+          - openai/o3-mini
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "OpenAI"
+
+    # =========================
+    # DeepSeek
+    # =========================
+    - name: "DeepSeek"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - deepseek-ai/deepseek-v3.2
+          - deepseek-ai/deepseek-r1
+          - deepseek-ai/deepseek-r1-0528
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "DeepSeek"
+
+    # =========================
+    # Google (Gemini)
+    # =========================
+    - name: "Google Gemini"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - google/gemini-2.5-flash
+          - google/gemini-3-flash
+          - google/gemini-3-pro-preview
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "Google"
+
+    # =========================
+    # Meta (LLaMA)
+    # =========================
+    - name: "Meta"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - meta/llama-3.3-70b-instruct
+          - meta/llama-3.1-70b-instruct
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "Meta"
+
+    # =========================
+    # Mistral
+    # =========================
+    - name: "Mistral"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - mistralai/mistral-large
+          - mistralai/mistral-large-2-instruct
+          - mistralai/mistral-small-24b-instruct
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "Mistral"
+
+    # =========================
+    # xAI (Grok)
+    # =========================
+    - name: "xAI"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - xai/grok-4-fast-reasoning
+          - xai/grok-4-fast-non-reasoning
+          - xai/grok-code-fast-1
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "xAI"
+
+    # =========================
+    # Zhipu / GLM
+    # =========================
+    - name: "Zhipu (GLM)"
+      apiKey: ${KTAI_API_KEY}
+      baseURL: "https://ktaiapi.qzz.io/v1"
+      models:
+        default:
+          - zai-org/GLM-4.5-Air
+          - zai-org/glm-4.5
+          - zai-org/glm-4.5v
+          - meta/llama-4-maverick-17b-128e-instruct
+        fetch: false
+      titleConvo: true
+      titleModel: "meta/llama-4-maverick-17b-128e-instruct"
+      summarize: true
+      summaryModel: "meta/llama-4-maverick-17b-128e-instruct"
+      modelDisplayLabel: "GLM"
